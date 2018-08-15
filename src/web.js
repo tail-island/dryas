@@ -21,7 +21,7 @@ const SCALE_FACTOR = 1 / 0.0254 / 401;  // iPhone 8 Plusは401ppi。この式で
     });
   });
 
-  // 半径。緯度が大きくなると半径が小さくなるので、軽度向けの半径も作成します。
+  // 半径。緯度が大きくなると半径は小さくなるので、経度向けの半径も作成します。
   const radiusForLatitude  = EARTH_RADIUS;
   const radiusForLongitude = Math.cos(T.Math.degToRad(originCoordinate.latitude)) * radiusForLatitude;
 
@@ -45,7 +45,7 @@ const SCALE_FACTOR = 1 / 0.0254 / 401;  // iPhone 8 Plusは401ppi。この式で
   const scene = (() => {
     const result = new T.Scene();
 
-    // three.jsの単位はドットみたいなので、単位がメートルになるようにスケーリングします。
+    // three.jsの単位はドット（みたい）なので、単位がメートルになるようにスケーリングします。
     result.scale.multiplyScalar(SCALE_FACTOR);
 
     return result;
