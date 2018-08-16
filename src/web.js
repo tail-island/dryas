@@ -10,7 +10,7 @@ const SCALE_FACTOR = 1 / 0.0254 / 401;  // iPhone 8 Plusは401ppi。この式で
   document.getElementById('video').srcObject = await navigator.mediaDevices.getUserMedia({audio: false,
                                                                                           video: {facingMode: {exact: 'environment'}}});
 
-  // 座標系は、現在位置を中心とします。
+  // 開始時の現在位置を原点にします。
   const originCoordinate = await new Promise((resolve) => {
     navigator.geolocation.getCurrentPosition((position) => {
       // resolve({latitude:  position.coords.latitude,
