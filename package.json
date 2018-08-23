@@ -24,6 +24,7 @@
     ]
   },
   "scripts": {
+    "build": "webpack --mode production",
     "serve": "http-server -c-1 --ssl",
     "start": "npm-run-all --parallel watch serve",
     "test": "mocha --require babel-register test/**/*.js",
